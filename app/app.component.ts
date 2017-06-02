@@ -1,23 +1,57 @@
 import { Component } from '@angular/core';
+import { Food } from './meal.model';
 
 @Component({
   selector: 'my-app',
   template: `
   <div class="container">
   <h1>Meal Tracker</h1>
-  <h2>Foods I have Eaten:</h2>
-  <div  class="food" *ngFor="let currentFood of foodsEaten">
-  <p>{{currentFood}}</p>
+  <h1>Foods I have Eaten:</h1>
+  <div  *ngFor="let currentFood of foodsEaten">
+  <p>{{currentFood.title}}</p>
+  <p>Description {{currentFood.description}}</p>
+  <p>Calories {{currentFood.calories}}</p>
+
+  <button (click)="showDetails(currentFood)">Edit Meal</button>
   </div>
+
+
+<div *ngIf="selectedFood">
+<h1>Edit Meal</h1>
+<div>
+<label>Enter Name of Food:</label>
+<input [(ngModel)]="selectedFood.title">
+</div>
+<div>
+<label>Enter Food Description:</label>
+<input [(ngModel)]="selectedFood.description">
+</div>
+<div>
+<label>Enter no of Calories:</label>
+<input [(ngModel)]="selectedFood.calories">
+<button (click)="finishedEditing()">Done Editing</button>
+</div>
+</div>
+
+  <addmeal></addmeal>
+
   </div>
+
   `
 })
 
 export class AppComponent {
-  foodsEaten: String[] = ["Mukimo", "Githeri", "Omena", "Chapati"];
+  public foodsEaten: Food[] = [
+    new Food("Mukimo", "smashed potaties with greens and githeri", 5000),
+    new Food("Ugali", " and githeri", 200),
+    new Food("shafashi", "smashed potaties with greens and githeri", 5000),
+  ];
+  selectedFood: Food = null;
+  showDetails(clickedfoodsEaten: Food) {
+    this.selectedFood = clickedfoodsEaten;
+  }
+  finishedEditing() {
+    this.selectedFood = null;
+  }
 
-}
-
-export class Food {
-  constructor(public title: string, public details: string, public Carrolies: number) { }
 }
