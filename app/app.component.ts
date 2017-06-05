@@ -33,7 +33,10 @@ import { Food } from './meal.model';
 </div>
 </div>
 
-  <addmeal></addmeal>
+  <addmeal
+  (newFoodSender)="addFood($event)"
+
+  ></addmeal>
 
   </div>
 
@@ -52,6 +55,9 @@ export class AppComponent {
   }
   finishedEditing() {
     this.selectedFood = null;
+  }
+  addFood(newMealToAdd: Food) {
+    this.foodsEaten.push(newMealToAdd);
   }
 
 }
