@@ -38,6 +38,13 @@ import { Food } from './meal.model';
 
   ></addmeal>
 
+  <select>
+  <option value="all">Show All</option>
+  <option value="isDone">Show Done</option>
+  <option value="notDone" selected="selected">Show Not Done</option>
+</select>
+  <div *ngFor="let currentFood of childFoodList | completeness">
+
   </div>
 
   `
