@@ -7,31 +7,15 @@ import { Food } from './meal.model';
   <div class="container">
   <h1>Meal Tracker</h1>
   <h1>Foods I have Eaten:</h1>
-  <div  *ngFor="let currentFood of foodsEaten">
-  <p>{{currentFood.title}}</p>
-  <p>Description {{currentFood.description}}</p>
-  <p>Calories {{currentFood.calories}}</p>
+  <meal-list
+    [childFoodList]="masterFoodList"
+    (clickSender)="showDetails($event)"
+  ></meal-list>
 
-  <button (click)="showDetails(currentFood)">Edit Meal</button>
-  </div>
-
-
-<div *ngIf="selectedFood">
-<h1>Edit Meal</h1>
-<div>
-<label>Enter Name of Food:</label>
-<input [(ngModel)]="selectedFood.title">
-</div>
-<div>
-<label>Enter Food Description:</label>
-<input [(ngModel)]="selectedFood.description">
-</div>
-<div>
-<label>Enter no of Calories:</label>
-<input [(ngModel)]="selectedFood.calories">
-<button (click)="finishedEditing()">Done Editing</button>
-</div>
-</div>
+  <edit-meal
+  [childSelectedFood]="selectedFood"
+  (doneClickedSender)="finishedEditing()"
+  ></edit-meal>
 
   <addmeal
   (newFoodSender)="addFood($event)"
@@ -56,6 +40,7 @@ export class AppComponent {
     new Food("Ugali", " and githeri", 200),
     new Food("shafashi", "smashed potaties with greens and githeri", 5000),
   ];
+
   selectedFood: Food = null;
   showDetails(clickedfoodsEaten: Food) {
     this.selectedFood = clickedfoodsEaten;
@@ -63,6 +48,7 @@ export class AppComponent {
   finishedEditing() {
     this.selectedFood = null;
   }
+
   addFood(newMealToAdd: Food) {
     this.foodsEaten.push(newMealToAdd);
   }

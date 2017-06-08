@@ -17,7 +17,7 @@ import { Food } from './meal.model';
   <input #newDescription>
   </div>
   <div>
-  <label>Enter No of Calories:</label>
+  <label>Enter No. of Calories:</label>
   <input #newCalories>
 
   <button (click)="
@@ -26,7 +26,7 @@ import { Food } from './meal.model';
   newDescription.value='';
   newCalories.value= '';
   "
-  >Add Todays Meal</button>
+  >Add Today's Meal</button>
   </div>
   </div>
   `

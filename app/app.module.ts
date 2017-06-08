@@ -4,6 +4,8 @@ import { AppComponent }   from './app.component';
 import { FormsModule }  from '@angular/forms';
 import { AddedMealComponent } from './add-meal.component';
 import { CompletenessPipe } from './completeness.pipe';
+import { MealListComponent } from './meal-list.component';
+import { EditMealComponent } from './edit-meal.component';
 
 @NgModule({
   imports: [
@@ -14,6 +16,8 @@ import { CompletenessPipe } from './completeness.pipe';
     AppComponent,
     AddedMealComponent,
     CompletenessPipe,
+    MealListComponent,
+    EditMealComponent,
   ],
   bootstrap: [AppComponent]
 })
