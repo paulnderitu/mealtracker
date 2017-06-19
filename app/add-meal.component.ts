@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { Food } from './meal.model';
 
 @Component({
-  selector: 'addmeal',
+  selector: 'add-meal',
   template: `
   <div class="container">
 
@@ -12,10 +12,12 @@ import { Food } from './meal.model';
   <label>Enter Meal Name:</label>
   <input #newName>
   </div>
+
   <div>
   <label>Enter Meal Description:</label>
   <input #newDescription>
   </div>
+
   <div>
   <label>Enter No. of Calories:</label>
   <input #newCalories>
@@ -31,7 +33,7 @@ import { Food } from './meal.model';
   </div>
   `
 })
-export class AddedMealComponent {
+export class AddMealComponent {
 
   @Output() newFoodSender = new EventEmitter();
   addClicked(name: string, description: string, calories: number) {

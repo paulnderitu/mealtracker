@@ -17,10 +17,10 @@ import { Food } from './meal.model';
   (doneClickedSender)="finishedEditing()"
   ></edit-meal>
 
-  <addmeal
+  <add-meal
   (newFoodSender)="addFood($event)"
 
-  ></addmeal>
+  ></add-meal>
 
   <select>
   <option value="all">Show All</option>
