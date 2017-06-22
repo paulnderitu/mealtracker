@@ -37,7 +37,7 @@ export class AddMealComponent {
 
   @Output() newFoodSender = new EventEmitter();
   addClicked(name: string, description: string, calories: number) {
-    var newMealToAdd: Food = new Food(name, description, calories);
-    this.newFoodSender.emit(newMealToAdd);
+    var newFoodToAdd: Food = new Food(name, description, calories);
+    this.newFoodSender.emit(newFoodToAdd);
   }
 }

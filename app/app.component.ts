@@ -25,7 +25,6 @@ import { Food } from './meal.model';
 
   <add-meal
   (newFoodSender)="addFood($event)"
-
   ></add-meal>
 
   <select>
@@ -50,15 +49,14 @@ export class AppComponent {
   ];
 
   selectedFood: Food = null;
-  showDetails(clickedfoodsEaten: Food) {
-    this.selectedFood = clickedfoodsEaten;
+  showDetails(clickedFood: Food) {
+    this.selectedFood = clickedFood;
   }
   finishedEditing() {
     this.selectedFood = null;
   }
 
-  addFood(newMealToAdd: Food) {
-    this.foodsEaten.push(newMealToAdd);
+  addFood(newFoodFromChild: Food) {
+    this.masterFoodList.push(newFoodFromChild);
   }
-
 }
