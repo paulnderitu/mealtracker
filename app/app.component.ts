@@ -7,11 +7,7 @@ import { Food } from './meal.model';
   <div class="container">
   <h1>Meal Tracker</h1>
   <h1>Foods I have Eaten:</h1>
-  <div  *ngFor="let currentFood of foodsEaten">
-  <p>Title: {{currentFood.title}}</p>
-  <p>Description: {{currentFood.description}}</p>
-  <p>No. of Calories: {{currentFood.calories}}</p>
-  </div>
+  
 
   <meal-list
     [childFoodList]="masterFoodList"

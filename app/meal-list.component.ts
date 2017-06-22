@@ -3,7 +3,7 @@ import { Food } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
-  <div  *ngFor="let currentFood of childFoodList">
+  <div  *ngFor="let currentFood of childFoodList |completeness">
   <p>Title: {{currentFood.title}}</p>
   <p>Description: {{currentFood.description}}</p>
   <p>No. of Calories: {{currentFood.calories}}</p>

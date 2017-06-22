@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { FormsModule }  from '@angular/forms';
 import { AddMealComponent } from './add-meal.component';
-import { CompletenessPipe } from './completeness.pipe';
 import { MealListComponent } from './meal-list.component';
 import { EditMealComponent } from './edit-meal.component';
+import { CompletenessPipe } from './completeness.pipe';
+
 
 @NgModule({
   imports: [
@@ -15,9 +16,9 @@ import { EditMealComponent } from './edit-meal.component';
   declarations: [
     AppComponent,
     AddMealComponent,
-    CompletenessPipe,
     MealListComponent,
     EditMealComponent,
+    CompletenessPipe,
   ],
   bootstrap: [AppComponent]
 })
