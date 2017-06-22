@@ -7,6 +7,12 @@ import { Food } from './meal.model';
   <div class="container">
   <h1>Meal Tracker</h1>
   <h1>Foods I have Eaten:</h1>
+  <div  *ngFor="let currentFood of foodsEaten">
+  <p>Title: {{currentFood.title}}</p>
+  <p>Description: {{currentFood.description}}</p>
+  <p>No. of Calories: {{currentFood.calories}}</p>
+  </div>
+
   <meal-list
     [childFoodList]="masterFoodList"
     (clickSender)="showDetails($event)"
@@ -31,14 +37,16 @@ import { Food } from './meal.model';
 
   </div>
 
+
+
   `
 })
 
 export class AppComponent {
   public foodsEaten: Food[] = [
-    new Food("Mukimo", "smashed potaties with greens and githeri", 5000),
-    new Food("Ugali", " and githeri", 200),
-    new Food("shafashi", "smashed potaties with greens and githeri", 5000),
+    new Food("Mukimo", "smashed potatoess with greens and githeri", 5000),
+    new Food("Ugali", "miller corn served with greens or meat", 200),
+    new Food("shafashi", "made from wheat flour", 300),
   ];
 
   selectedFood: Food = null;

@@ -3,10 +3,10 @@ import { Food } from './meal.model';
 @Component({
   selector: 'meal-list',
   template: `
-  <div  *ngFor="let currentFood of childFoodList">
-  <p>{{currentFood.title}}</p>
-  <p>Description {{currentFood.description}}</p>
-  <p>Calories {{currentFood.calories}}</p>
+  <div  *ngFor="let currentFood of foodsEaten">
+  <p>Title: {{currentFood.title}}</p>
+  <p>Description: {{currentFood.description}}</p>
+  <p>No. of Calories: {{currentFood.calories}}</p>
 
   <button (click)="editButtonHasBeenClicked(currentFood)">Edit Meal</button>
   </div>
