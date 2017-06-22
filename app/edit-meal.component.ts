@@ -5,19 +5,23 @@ import { Food } from './meal.model';
   template: `
   <div *ngIf="childSelectedFood">
   <h1>Edit Meal</h1>
+
   <div>
   <label>Enter Name of Food:</label>
-  <input [(ngModel)]="chilSelectedFood.title">
+  <input [(ngModel)]="childSelectedFood.title">
   </div>
+
   <div>
   <label>Enter Food Description:</label>
   <input [(ngModel)]="childSelectedFood.description">
   </div>
+
   <div>
   <label>Enter no. of Calories:</label>
   <input [(ngModel)]="childSelectedFood.calories">
   <button (click)="finishedEditing()">Done Editing</button>
   </div>
+
   </div>
   `
 })

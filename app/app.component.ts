@@ -46,7 +46,7 @@ export class AppComponent {
   public foodsEaten: Food[] = [
     new Food("Mukimo", "smashed potatoess with greens and githeri", 5000),
     new Food("Ugali", "miller corn served with greens or meat", 200),
-    new Food("shafashi", "made from wheat flour", 300),
+    new Food("shafashi", "made from wheat flour, usually", 300),
   ];
 
   selectedFood: Food = null;
