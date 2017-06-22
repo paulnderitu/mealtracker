@@ -5,7 +5,9 @@ import { Food } from './meal.model';
   selector: 'my-app',
   template: `
   <div class="container">
+  <div class="jumbotron">
   <h1>Meal Tracker</h1>
+  </div>
   <h1>Foods I have Eaten:</h1>
 
 
@@ -22,6 +24,7 @@ import { Food } from './meal.model';
   <add-meal
   (newFoodSender)="addFood($event)"
   ></add-meal>
+  </div>
 
   `
 })
