@@ -7,7 +7,7 @@ import { Food } from './meal.model';
   <div class="container">
   <h1>Meal Tracker</h1>
   <h1>Foods I have Eaten:</h1>
-  
+
 
   <meal-list
     [childFoodList]="masterFoodList"
@@ -22,17 +22,6 @@ import { Food } from './meal.model';
   <add-meal
   (newFoodSender)="addFood($event)"
   ></add-meal>
-
-  <select>
-  <option value="all">Show All</option>
-  <option value="isDone">Show Done</option>
-  <option value="notDone" selected="selected">Show Not Done</option>
-</select>
-  <div *ngFor="let currentFood of childFoodList | completeness">
-
-  </div>
-
-
 
   `
 })
