@@ -11,14 +11,14 @@ export class CompletenessPipe implements PipeTransform {
     var output: Food[] = [];
     if (desiredCompleteness === "notDone") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].calories >= 300) {
+        if (input[i].calories >= 500) {
           output.push(input[i]);
         }
       }
       return output;
     } else if (desiredCompleteness === "isDone") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].calories <= 300) {
+        if (input[i].calories <= 500) {
           output.push(input[i]);
         }
       }
